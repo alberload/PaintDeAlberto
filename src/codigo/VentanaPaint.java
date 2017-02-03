@@ -18,7 +18,7 @@ import java.awt.image.BufferedImage;
 public class VentanaPaint extends javax.swing.JFrame {
 
     BufferedImage buffer = null;
-    
+    BufferedImage buffer2 = null;
     
     Ellipse2D.Double auxiliar ;
     
@@ -36,6 +36,15 @@ public class VentanaPaint extends javax.swing.JFrame {
         //dibujamos un rectangulo blanco del tamaño del lienzo
         g2.setColor(Color.white);
         g2.fillRect(0,0, buffer.getWidth(), buffer.getHeight());
+        
+        //inicializo el 2º buffer
+        buffer2 = (BufferedImage) lienzo.createImage(lienzo.getWidth(),
+                lienzo.getHeight());
+        //creo una imagen modificable
+        g2 = buffer2.createGraphics();
+        //dibujamos un rectangulo blanco del tamaño del lienzo
+        g2.setColor(Color.white);
+        g2.fillRect(0,0, buffer2.getWidth(), buffer2.getHeight());
     }
     
     @Override
@@ -71,6 +80,9 @@ public class VentanaPaint extends javax.swing.JFrame {
         lienzo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 lienzoMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                lienzoMouseReleased(evt);
             }
         });
 
@@ -111,8 +123,7 @@ public class VentanaPaint extends javax.swing.JFrame {
     private void lienzoMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lienzoMouseDragged
         Graphics2D g2 = (Graphics2D) buffer.getGraphics();
         //borro lo que hubiera en el lienzo
-        //g2.setColor(Color.white);
-        //g2.fillRect(0,0, buffer.getWidth(), buffer.getHeight());
+        g2.drawImage(buffer2, 0 , 0, null);
         
         //dibujo el circulo
         int radio = Math.abs( (int) auxiliar.x - evt.getX() );
@@ -121,11 +132,15 @@ public class VentanaPaint extends javax.swing.JFrame {
         g2.setColor(Color.black);
         g2.fill(auxiliar);
         
-        
        g2 = (Graphics2D) lienzo.getGraphics();
        g2.drawImage(buffer, 0 , 0, null);
        repaint(0,0,1,1);
     }//GEN-LAST:event_lienzoMouseDragged
+
+    private void lienzoMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lienzoMouseReleased
+        Graphics2D g2 = (Graphics2D) buffer2.getGraphics();     
+        g2.fill(auxiliar);
+    }//GEN-LAST:event_lienzoMouseReleased
 
     /**
      * @param args the command line arguments
