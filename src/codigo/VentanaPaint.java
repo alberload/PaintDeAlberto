@@ -19,6 +19,7 @@ public class VentanaPaint extends javax.swing.JFrame {
 
     BufferedImage buffer = null;
     
+    
     Ellipse2D.Double auxiliar ;
     
     public VentanaPaint() {
@@ -108,9 +109,22 @@ public class VentanaPaint extends javax.swing.JFrame {
     }//GEN-LAST:event_lienzoMousePressed
 
     private void lienzoMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lienzoMouseDragged
+        Graphics2D g2 = (Graphics2D) buffer.getGraphics();
+        //borro lo que hubiera en el lienzo
+        //g2.setColor(Color.white);
+        //g2.fillRect(0,0, buffer.getWidth(), buffer.getHeight());
+        
+        //dibujo el circulo
         int radio = Math.abs( (int) auxiliar.x - evt.getX() );
         auxiliar.width = radio;
         auxiliar.height = radio;
+        g2.setColor(Color.black);
+        g2.fill(auxiliar);
+        
+        
+       g2 = (Graphics2D) lienzo.getGraphics();
+       g2.drawImage(buffer, 0 , 0, null);
+       repaint(0,0,1,1);
     }//GEN-LAST:event_lienzoMouseDragged
 
     /**
