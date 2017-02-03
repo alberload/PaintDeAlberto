@@ -20,7 +20,7 @@ public class VentanaPaint extends javax.swing.JFrame {
     BufferedImage buffer = null;
     BufferedImage buffer2 = null;
     
-    Ellipse2D.Double auxiliar ;
+    Circulo auxiliar ;
     
     public VentanaPaint() {
         initComponents();
@@ -114,9 +114,9 @@ public class VentanaPaint extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void lienzoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lienzoMousePressed
-       auxiliar = new Ellipse2D.Double(evt.getX(), evt.getY(), 10, 10);
+       auxiliar = new Circulo(evt.getX(), evt.getY(), 1, Color.GREEN, true);
        Graphics2D g2 = (Graphics2D) buffer.getGraphics();
-       g2.fill(auxiliar);
+       auxiliar.dibujate(g2);
        repaint(0,0,1,1);
     }//GEN-LAST:event_lienzoMousePressed
 
@@ -129,8 +129,8 @@ public class VentanaPaint extends javax.swing.JFrame {
         int radio = Math.abs( (int) auxiliar.x - evt.getX() );
         auxiliar.width = radio;
         auxiliar.height = radio;
-        g2.setColor(Color.black);
-        g2.fill(auxiliar);
+        
+        auxiliar.dibujate(g2);
         
        g2 = (Graphics2D) lienzo.getGraphics();
        g2.drawImage(buffer, 0 , 0, null);
@@ -139,7 +139,7 @@ public class VentanaPaint extends javax.swing.JFrame {
 
     private void lienzoMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lienzoMouseReleased
         Graphics2D g2 = (Graphics2D) buffer2.getGraphics();     
-        g2.fill(auxiliar);
+        auxiliar.dibujate(g2);
     }//GEN-LAST:event_lienzoMouseReleased
 
     /**
