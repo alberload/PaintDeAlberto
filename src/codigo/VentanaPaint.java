@@ -62,6 +62,11 @@ public class VentanaPaint extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        lienzo.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                lienzoMouseDragged(evt);
+            }
+        });
         lienzo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 lienzoMousePressed(evt);
@@ -101,6 +106,12 @@ public class VentanaPaint extends javax.swing.JFrame {
        g2.fill(auxiliar);
        repaint(0,0,1,1);
     }//GEN-LAST:event_lienzoMousePressed
+
+    private void lienzoMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lienzoMouseDragged
+        int radio = Math.abs( (int) auxiliar.x - evt.getX() );
+        auxiliar.width = radio;
+        auxiliar.height = radio;
+    }//GEN-LAST:event_lienzoMouseDragged
 
     /**
      * @param args the command line arguments
