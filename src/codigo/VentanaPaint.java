@@ -20,11 +20,15 @@ public class VentanaPaint extends javax.swing.JFrame {
     BufferedImage buffer = null;
     BufferedImage buffer2 = null;
     
+    Color colorSeleccionado = Color.BLUE;
+    
+    
     Circulo auxiliar ;
     
     public VentanaPaint() {
         initComponents();
         inicializaBuffers();
+        jDialog1.setSize(615, 450);
     }
 
     private void inicializaBuffers(){
@@ -75,9 +79,19 @@ public class VentanaPaint extends javax.swing.JFrame {
         lienzo = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
 
-        jButton2.setText("jButton2");
+        jButton2.setText("Aceptar");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButton2MousePressed(evt);
+            }
+        });
 
-        jButton3.setText("jButton3");
+        jButton3.setText("Cancelar");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButton3MousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -129,6 +143,11 @@ public class VentanaPaint extends javax.swing.JFrame {
         );
 
         jButton1.setText("Color");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButton1MousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -152,7 +171,7 @@ public class VentanaPaint extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void lienzoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lienzoMousePressed
-       auxiliar = new Circulo(evt.getX(), evt.getY(), 1, Color.GREEN, true);
+       auxiliar = new Circulo(evt.getX(), evt.getY(), 1, colorSeleccionado, true);
        Graphics2D g2 = (Graphics2D) buffer.getGraphics();
        auxiliar.dibujate(g2);
        repaint(0,0,1,1);
@@ -179,6 +198,19 @@ public class VentanaPaint extends javax.swing.JFrame {
         Graphics2D g2 = (Graphics2D) buffer2.getGraphics();     
         auxiliar.dibujate(g2);
     }//GEN-LAST:event_lienzoMouseReleased
+
+    private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
+        jDialog1.setVisible(true);
+    }//GEN-LAST:event_jButton1MousePressed
+
+    private void jButton2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MousePressed
+        colorSeleccionado = jColorChooser1.getColor();
+        jDialog1.setVisible(false);
+    }//GEN-LAST:event_jButton2MousePressed
+
+    private void jButton3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MousePressed
+        jDialog1.setVisible(false);
+    }//GEN-LAST:event_jButton3MousePressed
 
     /**
      * @param args the command line arguments
