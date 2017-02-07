@@ -30,7 +30,10 @@ public class Circulo extends Ellipse2D.Double {
     }
     
     
-    public void dibujate(Graphics2D g2){
+    public void dibujate(Graphics2D g2, int posX){
+        int radio = Math.abs((int) this.x - posX);
+        this.width = radio;
+        this.height = radio;
         g2.setColor(color);
         if (relleno){
             g2.fill(this);

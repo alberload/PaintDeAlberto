@@ -204,7 +204,7 @@ public class VentanaPaint extends javax.swing.JFrame {
         switch(formaSeleccionada){
            case 0: 
                miCirculo = new Circulo(evt.getX(), evt.getY(), 1, colorSeleccionado, true); 
-               miCirculo.dibujate(bufferGraphics);
+               miCirculo.dibujate(bufferGraphics, evt.getX());
                break;
            case 1: 
                miCuadrado = new Cuadrado(evt.getX(), evt.getY(), 1, colorSeleccionado, true); 
@@ -217,14 +217,8 @@ public class VentanaPaint extends javax.swing.JFrame {
     private void lienzoMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lienzoMouseDragged
         //borro lo que hubiera en el lienzo
         bufferGraphics.drawImage(buffer2, 0, 0, null);
-
         switch (formaSeleccionada) {
-            case 0: //dibujo el circulo
-                int radio = Math.abs((int) miCirculo.x - evt.getX());
-                miCirculo.width = radio;
-                miCirculo.height = radio;
-                miCirculo.dibujate(bufferGraphics);
-                break;
+            case 0: miCirculo.dibujate(bufferGraphics, evt.getX()); break;
             case 1: //dibujo el cuadrado
                 int lado = Math.abs((int) miCuadrado.x - evt.getX());
                 miCuadrado.width = lado;
@@ -239,7 +233,7 @@ public class VentanaPaint extends javax.swing.JFrame {
 
     private void lienzoMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lienzoMouseReleased
         switch(formaSeleccionada){
-           case 0: miCirculo.dibujate(buffer2Graphics);break;
+           case 0: miCirculo.dibujate(buffer2Graphics, evt.getX()); break;
            case 1: miCuadrado.dibujate(buffer2Graphics);break;     
        }
     }//GEN-LAST:event_lienzoMouseReleased
