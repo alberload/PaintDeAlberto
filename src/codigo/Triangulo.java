@@ -28,17 +28,13 @@ public class Triangulo extends Polygon{
         this.ypoints[2] = _posY + _altura;
         
         int mediaBase = (int) (_altura / Math.sin(Math.toRadians(60))) ;
-
         this.xpoints[1] = _posX + mediaBase;
-        this.xpoints[2] = _posX - mediaBase;
-
-        
+        this.xpoints[2] = _posX - mediaBase;    
         color = _color;
         relleno = _relleno;
     }
     
     public void dibujate(Graphics2D g2, int posY){
-
         int altura = Math.abs((int) ypoints[0] - posY);
         this.ypoints[1] = posY + altura;
         this.ypoints[2] = posY + altura;
