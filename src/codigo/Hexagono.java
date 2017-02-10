@@ -13,9 +13,10 @@ import java.awt.Polygon;
  *
  * @author Jorge Cisneros
  */
-public class Pentagono extends Forma {
-    
-    public Pentagono(int _posX, int _posY, int[] _puntosX, int[] _puntosY, Color _color, boolean _relleno) {
-        super(_posX, _posY, _puntosX, _puntosY, _color, _relleno, 5 );
+public class Hexagono extends Forma {
+
+    public Hexagono(int _posX, int _posY, int[] _puntosX, int[] _puntosY, Color _color, boolean _relleno) {
+        super(_posX, _posY, _puntosX, _puntosY, _color, _relleno, 6 );
     }
+
 }
