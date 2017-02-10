@@ -240,7 +240,7 @@ public class VentanaPaint extends javax.swing.JFrame {
                break;
            case 3: 
                miPentagono = new Pentagono(evt.getX(), evt.getY(), new int[5], new int[5], 1, colorSeleccionado, true); 
-               miPentagono.dibujate(bufferGraphics, evt.getX());
+               //miPentagono.dibujate(bufferGraphics, 0);
                break;                
        }
        repaint(0,0,1,1);
