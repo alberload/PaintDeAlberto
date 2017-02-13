@@ -25,12 +25,7 @@ public class VentanaPaint extends javax.swing.JFrame {
     Color colorSeleccionado = Color.BLUE;
     
     int formaSeleccionada = 0;
-    
-    Circulo miCirculo ;
-    Cuadrado miCuadrado;
-    Triangulo miTriangulo;
-    Pentagono miPentagono;
-    Hexagono miHexagono;
+
     Forma miForma;
     
     int numLados = 0;
@@ -249,45 +244,22 @@ public class VentanaPaint extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void lienzoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lienzoMousePressed
-
-        miForma = new Forma(evt.getX(), evt.getY(), 
+       miForma = new Forma(evt.getX(), evt.getY(), 
                 new int[numLados], new int[numLados], colorSeleccionado, true, numLados);
-        
-//        switch(formaSeleccionada){
-//           case 0: miCirculo = new Circulo(evt.getX(), evt.getY(), 1, colorSeleccionado, true);break;
-//           case 1: miCuadrado = new Cuadrado(evt.getX(), evt.getY(), 1, colorSeleccionado, true);break;  
-//           case 2: miForma = new Forma(evt.getX(), evt.getY(), new int[50], new int[50], colorSeleccionado, true,50); break;
-//           case 3: miPentagono = new Pentagono(evt.getX(), evt.getY(), new int[5], new int[5], colorSeleccionado, true); break; 
-//           case 4: miHexagono = new Hexagono(evt.getX(), evt.getY(), new int[6], new int[6], colorSeleccionado, true); break; 
-//       }
        repaint(0,0,1,1);
     }//GEN-LAST:event_lienzoMousePressed
 
     private void lienzoMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lienzoMouseDragged
         //borro lo que hubiera en el lienzo
         bufferGraphics.drawImage(buffer2, 0, 0, null);
-        miForma.dibujate(bufferGraphics, evt.getY());
-//        switch (formaSeleccionada) {
-//            case 0: miCirculo.dibujate(bufferGraphics, evt.getX()); break;
-//            case 1: miCuadrado.dibujate(bufferGraphics, evt.getX());break;
-//            case 2: miForma.dibujate(bufferGraphics, evt.getY());break;
-//            case 3: miPentagono.dibujate(bufferGraphics, evt.getY());break;
-//            case 4: miHexagono.dibujate(bufferGraphics, evt.getY());break;
-//        }
-
+        miForma.dibujate(bufferGraphics, evt.getX(), evt.getY());
        lienzoGraphics.drawImage(buffer, 0 , 0, null);
        repaint(0,0,1,1);
     }//GEN-LAST:event_lienzoMouseDragged
 
     private void lienzoMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lienzoMouseReleased
-        miForma.dibujate(buffer2Graphics, evt.getY());
-//        switch(formaSeleccionada){
-//           case 0: miCirculo.dibujate(buffer2Graphics, evt.getX()); break;
-//           case 1: miCuadrado.dibujate(buffer2Graphics, evt.getX());break;
-//           case 2: miForma.dibujate(buffer2Graphics, evt.getY());break;
-//           case 3: miPentagono.dibujate(buffer2Graphics, evt.getY());break;
-//           case 4: miHexagono.dibujate(buffer2Graphics, evt.getY());break;
-//       }
+        miForma.dibujate(buffer2Graphics, evt.getX() , evt.getY());
+
     }//GEN-LAST:event_lienzoMouseReleased
 
     private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed

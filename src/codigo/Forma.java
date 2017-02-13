@@ -29,14 +29,15 @@ public class Forma extends Polygon {
         numLados = _numLados;
         this.x = _posX;
         this.y = _posY;
-        calculaVertices(1);
+        calculaVertices(1,0);
         color = _color;
         relleno = _relleno;
     }
 
-    public void dibujate(Graphics2D g2, int posY) {
+    public void dibujate(Graphics2D g2, int posX, int posY ) {
         int radio = this.y - posY;
-        calculaVertices(radio);
+        int giro = this.x - posX;
+        calculaVertices(radio, giro);
         g2.setColor(color);
         if (relleno) {
             g2.fill(this);
@@ -46,11 +47,10 @@ public class Forma extends Polygon {
 
     }
 
-    public void calculaVertices(int _radio) {
-
+    public void calculaVertices(int _radio, double _giro) {
         for (int i = 0; i < numLados; i++) {
-            this.xpoints[i] = (int) (this.x + _radio * Math.cos(2 * Math.PI * i / npoints));
-            this.ypoints[i] = (int) (this.y + _radio * Math.sin(2 * Math.PI * i / npoints));
+            this.xpoints[i] = (int) (this.x + _radio * Math.cos((2 * Math.PI * i + _giro) / npoints));
+            this.ypoints[i] = (int) (this.y + _radio * Math.sin((2 * Math.PI * i + _giro)/ npoints));
         }
 
     }
