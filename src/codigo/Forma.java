@@ -36,7 +36,7 @@ public class Forma extends Polygon {
 
     public void dibujate(Graphics2D g2, int posX, int posY ) {
         int radio = this.y - posY;
-        int giro = this.x - posX;
+        int giro = (this.x - posX);
         calculaVertices(radio, giro);
         g2.setColor(color);
         if (relleno) {
