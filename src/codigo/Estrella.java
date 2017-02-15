@@ -15,7 +15,7 @@ import java.awt.Color;
 public class Estrella extends Forma {
     
     public Estrella(int _posX, int _posY , Color _color, boolean _relleno) {
-        super(_posX, _posY, new int[24], new int[24], _color, _relleno, 24 );
+        super(_posX, _posY, new int[32], new int[32], _color, _relleno, 32 );
     }
     
     @Override
