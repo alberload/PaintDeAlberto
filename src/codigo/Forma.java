@@ -1,10 +1,3 @@
-/*
- * la clase Forma es la clase comun a todos los objetos graficos
-que estamos creando
-contiene los metodos comunes de pintado y de cálculo de posición de los vértices
-y las propiedades comunes de todos los objetos graficos que estamos creando: el color,
-el relleno, la posición x e y y el numero de lados
- */
 package codigo;
 
 import java.awt.Color;
