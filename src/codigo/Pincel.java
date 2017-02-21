@@ -6,7 +6,7 @@ import java.awt.geom.Ellipse2D;
 
 /**
  *
- * @author xp
+ * @author alber
  */
 public class Pincel extends Ellipse2D.Double {
     

@@ -6,7 +6,7 @@ import java.awt.Polygon;
 
 /**
  *
- * @author Jorge Cisneros
+ * @author alber
  */
 public class Forma extends Polygon {
 

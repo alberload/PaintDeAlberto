@@ -187,25 +187,20 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jToggleButton1" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                              <Component id="cuadrado" linkSize="2" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
-                              <Component id="circulo" linkSize="2" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
-                              <Component id="triangulo" linkSize="2" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
-                              <Component id="pentagono" linkSize="2" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
-                              <Component id="hexagono" linkSize="2" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
-                              <Component id="estrella" linkSize="2" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="color" alignment="1" min="-2" pref="40" max="-2" attributes="0"/>
-                          <Component id="lapiz" alignment="1" min="-2" pref="40" max="-2" attributes="0"/>
-                          <Component id="linea" alignment="1" min="-2" pref="40" max="-2" attributes="0"/>
-                      </Group>
+                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                      <Component id="cuadrado" linkSize="2" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="circulo" linkSize="2" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="triangulo" linkSize="2" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="pentagono" linkSize="2" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="hexagono" linkSize="2" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="estrella" linkSize="2" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
                   </Group>
+                  <Component id="color" alignment="1" min="-2" pref="40" max="-2" attributes="0"/>
+                  <Component id="lapiz" alignment="1" min="-2" pref="40" max="-2" attributes="0"/>
+                  <Component id="linea" alignment="1" min="-2" pref="40" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="lienzo" min="-2" max="-2" attributes="0"/>

@@ -5,7 +5,7 @@ import java.awt.Color;
 
 /**
  *
- * @author Jorge Cisneros
+ * @author alber
  */
 public class Estrella extends Forma {
     
